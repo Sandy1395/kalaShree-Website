@@ -1,0 +1,38 @@
+<div class="container"><div class="row">
+  <div class="col-md-4  col-md-offset-4" >
+    <div class="account-wall" >
+      <h3 style="text-align: center"><strong>KalaShree Pvt Ltd</strong></h3>
+      <img class="profile-img" src="../../assets/create-profile.png"
+           alt="Image">
+      <form class="form-signin" method="post" name="form" #form="ngForm" novalidate>
+        <input type="text" name="email" class="form-control inputlogin" placeholder="Email" [(ngModel)]="login.email" #email="ngModel" pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" required>
+        <div *ngIf="email.invalid && (email.dirty || email.touched)"
+             class="text-danger">
+          <div *ngIf="email.errors.required">
+            Email is required.
+          </div>
+          <div [hidden]="!email.hasError('pattern')">Email format should be
+            <small><b>joe@abc.com</b></small>
+          </div>
+        </div>
+        <input type="password" name="password" class="form-control inputlogin" placeholder="Password" [(ngModel)]="login.password" #password="ngModel" minlength="4" required>
+        <a routerLink="/forgetpassword" class="text-center new-account pull-right">Forget Password ? </a>
+        <div *ngIf="password.invalid && (password.dirty || password.touched)"
+             class="text-danger">
+              <span *ngIf="password.errors.required">
+                Password is required.
+              </span>
+          <span *ngIf="password.errors.minlength">
+                Password must be 4 character.
+              </span>
+
+        </div>
+        <br>
+        <button class="btn btn-lg btn-primary btn-block" [disabled]="!form.valid" type="submit" (click)="onLogin(login)">
+          Sign in</button>
+      </form>
+      <a routerLink="/register" class="text-center new-account">Create an account </a>
+    </div>
+  </div>
+</div>
+</div>

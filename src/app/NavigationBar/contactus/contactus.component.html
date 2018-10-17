@@ -1,0 +1,56 @@
+
+<!-- Container (Contact Section) -->
+<div id="contact" class="container" style="background: white;padding: 20px;border-radius: 10px">
+  <h2 class="text-center">CONTACT</h2>
+  <div class="row">
+    <div class="col-sm-5">
+      <p>Contact us and we'll get back to you within 24 hours.</p>
+      <p><span class="glyphicon glyphicon-map-marker"></span>India</p>
+      <p><span class="glyphicon glyphicon-phone"></span> +91 9998886661</p>
+      <p><span class="glyphicon glyphicon-envelope"></span> onlinetuition.com</p>
+    </div>
+    <div class="col-sm-7 slideanim">
+      <form class="form-signin" method="post" name="form" #form="ngForm" novalidate>
+      <div class="row">
+        <div class="col-sm-6 form-group">
+          <input class="form-control" id="name" name="name" placeholder="Name" type="text" required [(ngModel)]="name" #namee="ngModel">
+          <div *ngIf="namee.invalid && (namee.dirty || namee.touched)"
+               class="text-danger">
+            <div *ngIf="namee.errors.required">
+              Name is required.
+            </div>
+
+          </div>
+        </div>
+        <div class="col-sm-6 form-group">
+          <input type="text" name="email" class="form-control inputlogin" placeholder="Email" [(ngModel)]="emaiil" #email="ngModel" pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" required>
+          <div *ngIf="email.invalid && (email.dirty || email.touched)"
+               class="text-danger">
+            <div *ngIf="email.errors.required">
+              Email is required.
+            </div>
+            <div [hidden]="!email.hasError('pattern')">Email format should be
+              <small><b>joe@abc.com</b></small>
+            </div>
+          </div>
+        </div>
+      </div>
+        <div>
+      <textarea class="form-control" id="comments" name="comments" placeholder="Comment" rows="6" required [(ngModel)]="message" #messagee="ngModel">></textarea><br>
+        <div *ngIf="messagee.invalid && (messagee.dirty || messagee.touched)"
+             class="text-danger">
+          <div *ngIf="messagee.errors.required">
+            Comment is required.
+          </div>
+
+        </div>
+    </div>
+      <div class="row">
+        <div class="col-sm-12 form-group">
+          <button class="btn btn-primary pull-right" type="submit" [disabled]="!form.valid" (click)="submit()">Send</button>
+        </div>
+      </div>
+      </form>
+    </div>
+  </div>
+</div>

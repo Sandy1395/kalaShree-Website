@@ -1,20 +1,48 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand">{{title}}</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li role="presentation" routerLinkActive="active" ><a routerLink="home">Home</a></li>
+        <li role="presentation" routerLinkActive="active" ><a routerLink="product">Our Products</a></li>
+        <li role="presentation" routerLinkActive="active" ><a routerLink="about">About</a></li>
+        <li role="presentation" routerLinkActive="active" ><a routerLink="contact">Contact</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li role="presentation" routerLinkActive="active"><a routerLink="register"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+        <li role="presentation" routerLinkActive="active"><a routerLink="login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<div>
+  <!--<ul id="tabs-swipe-demo" class="tabs">-->
+  <!--<li class="tab col s3"><a href="#swipe-1">Test 1</a></li>-->
+  <!--<li class="tab col s3"><a class="active" href="#swipe-2">Test 2</a></li>-->
+  <!--<li class="tab col s3"><a href="#swipe-3">Test 3</a></li>-->
+  <!--</ul>-->
+  <div id="swipe-1" class="col s12 "> </div>
+  <div id="swipe-2" class="col s12 "> <router-outlet></router-outlet></div>
+  <div id="swipe-3" class="col s12 "> <router-outlet></router-outlet></div>
 </div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
+<div class="footer navbar-fixed-bottom">
+  <footer class="footer">
+    <div class="container">
+      <p class="text-muted"><span>Managed by Online Tuition Classes</span><span class="pull-right">&copy;Online Tuition Classes</span></p>
+
+    </div>
+  </footer>
+</div>
+
+
 
